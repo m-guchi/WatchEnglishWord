@@ -1,0 +1,20 @@
+.container{
+    margin: 3rem 2rem;
+    display: grid;
+    font-size: 1.8rem;
+    gap: 1.9rem;
+}
+
+.item{
+    display: grid;
+    grid-template-columns: 9em 9em;
+}
+
+.english{
+    background-color: #dfdfdf;
+    padding: 0.1rem 0.6rem;
+}
+
+.japanese{
+    padding: 0.1rem 0.6rem;
+}
