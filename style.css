@@ -5,9 +5,13 @@
     gap: 1.9rem;
 }
 
-.item{
+.items{
     display: grid;
     grid-template-columns: 9em 9em;
+}
+
+.item{
+    visibility: hidden;
 }
 
 .english{
