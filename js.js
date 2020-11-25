@@ -3,15 +3,15 @@ var datanum = 0;
 function click(event){
     if (event.key == "ArrowDown"){
         if (id >= datanum-1) return 0
-        document.getElementById("item-" + id).style.visibility = "hidden";
+        document.getElementById("item-" + id).classList.remove("show");
         id += 1;
     } else if (event.key == "ArrowUp") {
         if (id <= 0) return 0
-        document.getElementById("item-" + id).style.visibility = "hidden";
+        document.getElementById("item-" + id).classList.remove("show");
         id -= 1;
     }
     console.log("item-"+id);
-    document.getElementById("item-" + id).style.visibility = "visible";
+    document.getElementById("item-" + id).classList.add("show");
 }
 
 const getCSV = new Promise((resolve,reject) => {
@@ -36,11 +36,12 @@ function convertCSVtoArray(str) {
     
     var textbox = ''
     for(var i=0;i<result.length;i++) {
-        console.log(i)
+        if (i == 0 || i == 10) textbox += '<div class="column">'
         textbox += '<div class="items">'
-            + '<div class="item" id="item-'+(i*2)+'"><span class="english" id="test">' + result[i][0] + '</span></div>'
-            + '<div class="item" id="item-'+(i*2+1)+'"><span class="japanese">' + result[i][1] + '</span></div>'
+            + '<div class="item" id="item-' + (i*2) + '">' + result[i][0] + '</div>'
+            + '<div class="item" id="item-' + (i*2+1) + '">' + result[i][1] + '</div>'
             + '</div>'
+        if (i == 9 || i == 19) textbox += '</div>'
     }
 
     document.getElementById("textbox").innerHTML = textbox
@@ -48,7 +49,7 @@ function convertCSVtoArray(str) {
 
 window.onload = function(){
     getCSV.then((res) => {
-        if(res) document.getElementById("item-0").style.visibility = "visible";
+        if (res) document.getElementById("item-0").classList.add("show");
     })
 }
 

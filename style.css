@@ -1,24 +1,32 @@
 .container{
-    margin: 3rem 2rem;
+    margin: 0.2rem 1rem;
     display: grid;
-    font-size: 1.8rem;
-    gap: 1.9rem;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    font-size: 2.2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 9rem;
+}
+
+.column{
+    display: grid;
+    gap: 0.7rem;
 }
 
 .items{
     display: grid;
-    grid-template-columns: 9em 9em;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
 }
 
 .item{
-    visibility: hidden;
-}
-
-.english{
+    text-indent:200%;
+    white-space:nowrap;
+    overflow:hidden;
     background-color: #dfdfdf;
-    padding: 0.1rem 0.6rem;
+    padding: 0 0.3rem;
+    text-align: center;
 }
 
-.japanese{
-    padding: 0.1rem 0.6rem;
+.show{
+    text-indent:0;
 }
