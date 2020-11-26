@@ -17,7 +17,7 @@ function click(event){
 const getCSV = new Promise((resolve,reject) => {
     var req = new XMLHttpRequest();
     req.open("get", "./data.csv", true);
-    req.overrideMimeType('text/plain; charset=Shift_JIS');
+    req.overrideMimeType('text/plain; charset=UTF');
     req.send(null); 
     req.onload = function () {
         convertCSVtoArray(req.responseText);
